@@ -8,20 +8,13 @@ import {
 } from "./index.style";
 const Draggable = ({ items }) => {
   const [offset, setOffset] = useState(0);
-  const [containerWidth, setContainerWidth] = useState(0);
-  const [elementWidth, setElementWidth] = useState(0);
   const onLeftClick = () => {
-    setOffset(offset - elementWidth);
+    setOffset(offset - 120);
   };
   const onRightClick = () => {
-    setOffset(offset + elementWidth);
+    setOffset(offset + 120);
   };
-  useEffect(() => {
-    setContainerWidth(container.current.getBoundingClientRect().width);
-    setElementWidth(
-      container.current.childNodes[0].getBoundingClientRect().width
-    );
-  }, []);
+  useEffect(() => {}, []);
   const container = useRef(null);
   return (
     <Wrapper>
